@@ -1,5 +1,9 @@
 import Hello from "./hello.mdx";
 
 export default function Page() {
-  return <Hello />;
+  return (
+    <div className="prose">
+      <Hello />
+    </div>
+  );
 }
