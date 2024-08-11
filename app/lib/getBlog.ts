@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
-import { compileMDX } from "next-mdx-remote/rsc";
+// import { compileMDX } from "next-mdx-remote/rsc";
+import matter from "gray-matter";
 import { notFound } from "next/navigation";
 
 const getBlogBySlug = async (slug: string) => {
@@ -8,20 +9,10 @@ const getBlogBySlug = async (slug: string) => {
   if (!fs.existsSync(filePath)) notFound();
 
   const res = fs.readFileSync(filePath, "utf8");
-
-  const { frontmatter, content } = await compileMDX<{
-    title: string;
-    description: string;
-  }>({
-    source: res,
-    options: {
-      parseFrontmatter: true,
-    },
-  });
-
+  const { data, content } = matter(res);
   return {
-    frontmatter,
     content,
+    frontMatter: data,
   };
 };
 
@@ -30,19 +21,11 @@ const getAllBlogs = async () => {
   const files = fs.readdirSync(filePath);
 
   const blogs = [];
-  for (const file of files) {
+  for await (const file of files) {
     const res = fs.readFileSync(path.join(filePath, file), "utf8");
-    const { frontmatter } = await compileMDX<{
-      title: string;
-      description: string;
-    }>({
-      source: res,
-      options: {
-        parseFrontmatter: true,
-      },
-    });
+    const { data } = matter(res);
 
-    blogs.push(frontmatter);
+    blogs.push(data);
   }
 
   return blogs;
