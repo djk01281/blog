@@ -18,7 +18,7 @@ const SiteHeader = () => {
 
   return (
     <div className={`w-full flex flex-col   ${open ? "h-screen" : ""}`}>
-      <header className="sticky top-0 w-full bg-yellow-50 flex flex-row justify-between px-5">
+      <header className="sticky top-0 w-full flex flex-row justify-between p-5">
         <Logo />
         <MobileNavTrigger
           type={open ? "close" : "open"}
