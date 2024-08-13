@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { NAV } from "@/app/lib/constants";
 import { cn } from "@/app/lib/utils";
+import { Menu } from "./menu";
+import { X } from "./x";
 const MobileNav = (props: { className?: string }) => {
   //   const [open, setOpen] = useState(false);
   return (
@@ -19,12 +21,13 @@ const MobileNav = (props: { className?: string }) => {
 
 type MobileNavTriggerProps = {
   handleClick: () => void;
+  type: "open" | "close";
 };
-const MobileNavTrigger = ({ handleClick }: MobileNavTriggerProps) => {
-  return (
-    <button className="sm:hidden" onClick={handleClick}>
-      X
-    </button>
+const MobileNavTrigger = ({ handleClick, type }: MobileNavTriggerProps) => {
+  return type === "open" ? (
+    <Menu onClick={handleClick} className="sm:hidden"></Menu>
+  ) : (
+    <X onClick={handleClick} className="sm:hidden"></X>
   );
 };
 
