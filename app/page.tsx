@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center  p-4 sm:p-8 md:p-16 lg:p-24">
+    <main className="h-full flex flex-col items-center  p-4 sm:p-8 md:p-16 lg:p-24">
       <div className="w-full max-w-lg px-6 py-4 rounded-full bg-[#f2f2f2] flex flex-row sm:flex-row justify-between items-center">
         <div className="font-bold h-full align-middle flex items-center justify-center text-xl ">
           @djk01281
