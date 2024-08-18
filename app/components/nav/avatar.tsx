@@ -6,7 +6,7 @@ const Avatar = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      className="sm:w-64 sm:h-64 md:w-64 md:h-64 lg:w-80 lg:h-80"
+      className="sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80"
     >
       <rect width="400" height="400" rx="20" fill="url(#pattern0_31_90)" />
       <rect
