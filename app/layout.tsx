@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`min-h-screen ${pretendard.className} bg-[#0f0d0e]`}>
+      <body className={`h-full ${pretendard.className} bg-[#0f0d0e]`}>
         <MaxWidthWrapper>
           <SiteHeader />
           <main className="flex-1">{children}</main>
