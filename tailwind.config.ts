@@ -16,6 +16,7 @@ const config: Config = {
       },
       fontFamily: {
         pretendard: ["var(--font-pretendard)"],
+        paytone: ["var(--font-paytone-one)"],
       },
     },
   },

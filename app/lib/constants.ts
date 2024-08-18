@@ -1,5 +1,5 @@
 const NAV = {
-  navItems: ["Home", "About", "Contact"],
+  navItems: ["Blog", "Projects", "CV"],
 };
 
 export { NAV };
