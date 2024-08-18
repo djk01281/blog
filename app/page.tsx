@@ -5,6 +5,8 @@ import { MaxWidthWrapper } from "./components/nav/max-width-wrapper";
 import { StackIcons } from "./components/nav/stack-icons";
 import { Avatar } from "./components/nav/avatar";
 
+const quote = '" 가치를 만들어내는 개발자 "';
+
 export default function Home() {
   return (
     <MaxWidthWrapper>
@@ -48,7 +50,7 @@ export default function Home() {
         </div>
         <div className="w-full flex flex-col gap-1.5 items-center text-xl">
           <div className="bg-[#4e89ff] flex flex-col text-white p-12 font-semibold rounded-3xl">
-            <div>" 가치를 만들어내는 개발자 "</div>
+            {quote}
           </div>
           <p className="text-[#d6d6d6] font-medium text-sm">
             매일 성장을 위해 노력합니다.
