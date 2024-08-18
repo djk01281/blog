@@ -8,7 +8,7 @@ import { Avatar } from "./components/nav/avatar";
 export default function Home() {
   return (
     <MaxWidthWrapper>
-      <main className="h-full flex flex-col gap-10 md:gap-12 lg:gap-16 items-center  p-4 sm:p-8 md:p-16 lg:p-24 text-[#f6f1d7]">
+      <main className="h-full flex flex-col gap-10 md:gap-12 lg:gap-16 items-center  px-4 md:px-16 lg:px-24 text-[#f6f1d7]">
         {/* <div className="w-full max-w-lg px-6 py-4 rounded-full bg-[#f2f2f2] flex flex-row sm:flex-row justify-between items-center">
           <div className="font-bold h-full align-middle flex items-center justify-center text-xl ">
             @djk01281
@@ -16,7 +16,7 @@ export default function Home() {
           <div className="gap-4 h-full align-middle flex flex-row sm:flex-row font-medium">
             <div className="h-full flex-row align-middle  flex items-center justify-center sm:mb-0">
               Blog
-            </div>
+            </div>k
             <div className=" h-full flex-row align-middle  flex items-center justify-center sm:mb-0">
               Portfolio
             </div>
@@ -46,11 +46,11 @@ export default function Home() {
             </h1>
           </motion.div>
         </div>
-        <div className="w-full flex flex-col gap-1 items-center text-xl">
-          <div className="bg-[#4e89ff] text-white p-12 w-full font-semibold text-center rounded-3xl">
-            어찌구 저찌구
+        <div className="w-full flex flex-col gap-1.5 items-center text-xl">
+          <div className="bg-[#4e89ff] flex flex-col text-white p-12 font-semibold rounded-3xl">
+            <div>" 가치를 만들어내는 개발자 "</div>
           </div>
-          <p className="text-[#d6d6d6] font-semibold">
+          <p className="text-[#d6d6d6] font-medium text-sm">
             매일 성장을 위해 노력합니다.
           </p>
         </div>

@@ -7,6 +7,7 @@ import { Logo } from "./logo";
 
 const SiteHeader = () => {
   const [open, setOpen] = useState(false);
+  const [showNav, setShowNav] = useState(true);
 
   useEffect(() => {
     if (open) {
@@ -17,8 +18,13 @@ const SiteHeader = () => {
   }, [open]);
 
   return (
-    <div className={`w-full flex flex-col   ${open ? "h-svh" : ""}`}>
-      <header className="sticky top-0 w-full flex flex-row justify-between items-center p-5">
+    <div
+      className={` ${showNav ? "" : "hidden"} w-full flex flex-col   ${
+        open ? "h-svh" : ""
+      }`}
+    >
+      {}
+      <header className=" w-full flex flex-row justify-between items-center p-5">
         <Logo />
         <MobileNavTrigger
           type={open ? "close" : "open"}
