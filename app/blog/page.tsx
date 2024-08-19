@@ -7,7 +7,8 @@ export default async function Page() {
     <div className="prose">
       {blogs.map((blog) => (
         <div key={blog.title}>
-          <h1>{blog.title}</h1>
+          {/* <a href={`${blog.title}`}`>{blog.title}</a> */}
+          <a href={`/blog/${blog.slug}`}>{blog.title}</a>
           <p>{blog.description}</p>
         </div>
       ))}

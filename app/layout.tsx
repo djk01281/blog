@@ -29,7 +29,7 @@ export default function RootLayout({
       <body className={`h-full ${pretendard.className} bg-[#0f0d0e]`}>
         <MaxWidthWrapper>
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          <main className="flex flex-col items-center">{children}</main>
           {/* <SiteFooter /> */}
         </MaxWidthWrapper>
       </body>

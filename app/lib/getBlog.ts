@@ -24,7 +24,7 @@ const getAllBlogs = async () => {
   for await (const file of files) {
     const res = fs.readFileSync(path.join(filePath, file), "utf8");
     const { data } = matter(res);
-
+    data.slug = file.replace(".mdx", "");
     blogs.push(data);
   }
 

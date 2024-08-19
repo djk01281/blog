@@ -26,12 +26,15 @@ export default async function ArticlePage({ params }: ArtilcePageProps) {
   //   });
 
   return (
-    <>
-      <div className="prose">
+    <div className="w-full flex flex-col items-center gap-8">
+      <div className=" text-[#f38ba3]  flex-col flex">
+        <span className="font-bold text-2xl">{frontMatter["title"]}</span>
+        <span>{frontMatter["description"]}</span>
+      </div>
+      <div className="prose prose-pink bg-[#1e1e25] rounded-lg w-full p-6 ">
         <MDXRemote source={content} components={components} />
       </div>
-      ;
-    </>
+    </div>
   );
 }
 
