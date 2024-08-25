@@ -2,6 +2,9 @@ import { getBlogBySlug } from "@/app/lib/getBlog";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Counter } from "../_components/example";
+import { MDXComponents } from "mdx/types";
+import { ImageCard } from "../_components/ImageCard";
+import { Cover } from "../_components/Cover";
 
 type ArtilcePageProps = {
   params: {
@@ -17,6 +20,25 @@ type ArtilcePageProps = {
 
 const components = {
   Counter,
+  ImageCard,
+};
+
+function customH1({ children }: { children: string }) {
+  return <h1 className="text-3xl text-[#fcba29]">{children}</h1>;
+}
+
+function customP({ children }: { children: string }) {
+  return <p style={{ margin: 0 }}>{children}</p>;
+}
+
+function customH3({ children }: { children: string }) {
+  return <h3 className="my-3">{children}</h3>;
+}
+
+const overrideComponents = {
+  p: customP,
+  h1: customH1,
+  h3: customH3,
 };
 
 export default async function ArticlePage({ params }: ArtilcePageProps) {
@@ -26,13 +48,24 @@ export default async function ArticlePage({ params }: ArtilcePageProps) {
   //   });
 
   return (
-    <div className="w-full flex flex-col items-center gap-8">
-      <div className=" text-[#f38ba3]  flex-col flex">
-        <span className="font-bold text-2xl">{frontMatter["title"]}</span>
+    <div className="w-full flex flex-col items-center gap-8 text-[#f9f4da] ">
+      <div className="flex-col flex items-center gap-2">
+        <span className="text-[#f38ba3] font-extrabold text-3xl md:text-5xl">
+          {frontMatter["title"]}
+        </span>
         <span>{frontMatter["description"]}</span>
       </div>
-      <div className="prose prose-pink bg-[#1e1e25] rounded-lg w-full p-6 ">
-        <MDXRemote source={content} components={components} />
+      <Cover src={frontMatter.cover} alt="cover" type="default"></Cover>
+      <div className="prose prose-pink rounded-lg w-full p-6  flex flex-col gap-2.5 text-[#fcf3e3]">
+        <MDXRemote
+          source={content}
+          components={
+            {
+              ...components,
+              ...overrideComponents,
+            } as MDXComponents
+          }
+        />
       </div>
     </div>
   );

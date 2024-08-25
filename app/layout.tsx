@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Paytone_One } from "next/font/google";
+import { Inter, Paytone_One, Bricolage_Grotesque } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SiteHeader } from "./components/nav/site-header";
-import { MaxWidthWrapper } from "./components/nav/max-width-wrapper";
+import { MaxWidthWrapper } from "./components/wrapper/max-width-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 const pretendard = localFont({
@@ -13,11 +13,13 @@ const pretendard = localFont({
   variable: "--font-pretendadrd",
 });
 
-const paytoneOne = Paytone_One({ weight: ["400"], subsets: ["latin"] });
-export const metadata: Metadata = {
-  title: "djk01281's blog",
-  description: "A web dev's blog",
-};
+const paytone = Paytone_One({ weight: ["400"], subsets: ["latin"] });
+
+const bricolage = Bricolage_Grotesque({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-bricolage",
+});
 
 export default function RootLayout({
   children,
@@ -26,7 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`h-full ${pretendard.className} bg-[#0f0d0e]`}>
+      <body
+        className={`h-full  ${pretendard.className} ${bricolage.variable} bg-[#0f0d0e]`}
+      >
         <MaxWidthWrapper>
           <SiteHeader />
           <main className="flex flex-col items-center">{children}</main>
@@ -36,3 +40,9 @@ export default function RootLayout({
     </html>
   );
 }
+
+export const metadata = {
+  icons: {
+    icon: "/favicon.ico",
+  },
+};

@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MaxWidthWrapper } from "./components/nav/max-width-wrapper";
-import { StackIcons } from "./components/nav/stack-icons";
-import { Avatar } from "./components/nav/avatar";
+import { MaxWidthWrapper } from "./components/wrapper/max-width-wrapper";
+import { StackIcons } from "./components/stack-icons";
+import { Avatar } from "./components/avatar";
 
 const quote = '" 가치를 만들어내는 개발자 "';
 

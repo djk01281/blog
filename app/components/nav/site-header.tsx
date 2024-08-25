@@ -1,9 +1,9 @@
 "use client";
-import { MaxWidthWrapper } from "./max-width-wrapper";
+import { MaxWidthWrapper } from "../wrapper/max-width-wrapper";
 import { MainNav } from "./main-nav";
 import { MobileNav, MobileNavTrigger } from "./mobile-nav";
 import { useState, useEffect } from "react";
-import { Logo } from "./logo";
+import { Logo } from "../logo";
 
 const SiteHeader = () => {
   const [open, setOpen] = useState(false);

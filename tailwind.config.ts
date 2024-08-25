@@ -19,19 +19,20 @@ const config: Config = {
       fontFamily: {
         pretendard: ["var(--font-pretendard)"],
         paytone: ["var(--font-paytone-one)"],
+        bricolage: ["var(--font-bricolage)"],
       },
       typography: ({ theme }: PluginUtils) => ({
         pink: {
           css: {
-            "--tw-prose-body": "#ECD9D6",
-            "--tw-prose-headings": "#ECD9D6",
+            "--tw-prose-body": "#fcf3e3",
+            "--tw-prose-headings": "#fcf3e3",
             // "--tw-prose-lead": theme("colors.pink[700]"),
             // "--tw-prose-links": theme("colors.pink[900]"),
-            "--tw-prose-bold": "#ECD9D6",
+            "--tw-prose-bold": "#fcf3e3",
             // "--tw-prose-counters": theme("colors.pink[600]"),
             // "--tw-prose-bullets": theme("colors.pink[400]"),
             // "--tw-prose-hr": theme("colors.pink[300]"),
-            "--tw-prose-quotes": "#ECD9D6",
+            "--tw-prose-quotes": "white",
             // "--tw-prose-quote-borders": theme("colors.pink[300]"),
             // "--tw-prose-captions": theme("colors.pink[700]"),
             // "--tw-prose-code": theme("colors.pink[900]"),
