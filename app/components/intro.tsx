@@ -21,7 +21,7 @@ export default function Intro() {
           initial={{ opacity: 0, y: 48 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="w-full flex items-center flex-col text-center"
+          className="w-full flex gap-2 items-center flex-col text-center"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold  font-pretendard">
             {"안녕하세요 ✋🏻"}
