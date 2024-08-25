@@ -20,7 +20,7 @@ const BlogCard = ({
   console.log(cover);
   return (
     <a
-      className="p-8 pb-4 bg-[#231F20] text-[#F4F0D6] rounded-lg font-bold hover:bg-[#1e1e25] hover:text-white flex flex-col gap-8 font-pretendard"
+      className="w-full p-8 pb-4 bg-[#231F20] text-[#F4F0D6] rounded-lg font-bold hover:bg-[#1e1e25] hover:text-white flex flex-col gap-8 font-pretendard"
       href={`/blog/${slug}`}
     >
       <Cover src={cover ? cover : ""} alt={title} type="default" />

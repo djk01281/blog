@@ -17,8 +17,7 @@ const Cover = ({ type = "default", ...props }: ImageCardProps) => {
       width={500}
       height={500 / ratio}
       alt={props.alt}
-      className="rounded-md m-0 "
-      sizes="500px"
+      className="rounded-md m-0"
       onLoadingComplete={({ naturalHeight, naturalWidth }) => {
         setRatio(naturalWidth / naturalHeight);
       }}

@@ -48,14 +48,16 @@ export default async function ArticlePage({ params }: ArtilcePageProps) {
   //   });
 
   return (
-    <div className="w-full flex flex-col items-center gap-8 text-[#f9f4da] ">
+    <div className="w-full flex flex-col items-center gap-8 text-[#f9f4da]">
       <div className="flex-col flex items-center gap-2">
         <span className="text-[#f38ba3] font-extrabold text-3xl md:text-5xl">
           {frontMatter["title"]}
         </span>
         <span>{frontMatter["description"]}</span>
       </div>
-      <Cover src={frontMatter.cover} alt="cover" type="default"></Cover>
+      <div className="p-4">
+        <Cover src={frontMatter.cover} alt="cover" type="default"></Cover>
+      </div>
       <div className="prose prose-pink rounded-lg w-full p-6  flex flex-col gap-2.5 text-[#fcf3e3]">
         <MDXRemote
           source={content}
