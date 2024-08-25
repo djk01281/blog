@@ -7,19 +7,17 @@ export default async function RecentBlogs() {
 
   return (
     <div className="w-full flex flex-col gap-6 ">
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 ">
-        {blogs.map(
-          (blog, index) =>
-            index < 2 &&
-            BlogCard({
-              title: blog.title,
-              description: blog.description,
-              date: blog.date,
-              tags: blog.tags,
-              slug: blog.slug,
-              cover: blog.cover,
-              className: "bg-[#2d2929] rounded-2xl ",
-            })
+      <div className="w-full grid md:grid-cols-2 gap-8 md:gap-12 ">
+        {blogs.slice(0, 2).map((blog, index) =>
+          BlogCard({
+            title: blog.title,
+            description: blog.description,
+            date: blog.date,
+            tags: blog.tags,
+            slug: blog.slug,
+            cover: blog.cover,
+            className: `${index === 1 ? "hidden sm:flex" : ""} rounded-xl`,
+          })
         )}
       </div>
     </div>
