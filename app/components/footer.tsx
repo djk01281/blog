@@ -11,7 +11,7 @@ export default function SiteFooter() {
             {NAV.navItems.map((nav) => (
               <a
                 key={nav}
-                href={`/${nav}`}
+                href={`/${nav.toLowerCase()}`}
                 className="text-[#f6f1d7] text-sm underline"
               >
                 {nav}
