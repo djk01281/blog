@@ -16,7 +16,7 @@ export default async function RecentBlogs() {
             tags: blog.tags,
             slug: blog.slug,
             cover: blog.cover,
-            className: `${index === 1 ? "hidden sm:flex" : ""} rounded-xl`,
+            className: `${index === 1 ? "hidden sm:flex" : ""} rounded-2xl`,
           })
         )}
       </div>

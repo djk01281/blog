@@ -55,7 +55,7 @@ export default async function ArticlePage({ params }: ArtilcePageProps) {
         </span>
         <span>{frontMatter["description"]}</span>
       </div>
-      <div className="p-4">
+      <div className="w-2/3">
         <Cover src={frontMatter.cover} alt="cover" type="default"></Cover>
       </div>
       <div className="prose prose-pink rounded-lg w-full p-6  flex flex-col gap-2.5 text-[#fcf3e3]">

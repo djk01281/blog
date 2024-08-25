@@ -40,13 +40,13 @@ interface ImageCardProps extends ImageProps {
 const Cover = ({ type = "default", ...props }: ImageCardProps) => {
   return (
     <div
-      className="w-full overflow-hidden relative"
+      className="w-full overflow-hidden relative rounded-xl"
       style={{ aspectRatio: "16 / 9" }} // Using aspect-ratio CSS property
     >
       <Image
         {...(props as ImageProps)}
         alt={props.alt}
-        className="rounded-lg m-0 object-cover"
+        className="m-0 object-cover"
         fill
         sizes={"100vw"}
       />
