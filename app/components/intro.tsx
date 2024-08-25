@@ -30,8 +30,8 @@ export default function Intro() {
   }, [quoteProgress]);
 
   return (
-    <div className="flex flex-col gap-80 mt-20 md:mt-12 lg:mt-4">
-      <div className="flex flex-col gap-10 lg:gap-8">
+    <div className="flex flex-col gap-2 mt-20 md:mt-12 lg:mt-4">
+      <div className="flex flex-col  lg:gap-4">
         <motion.div
           initial={{ opacity: 0, y: 48 }}
           animate={{ opacity: 1, y: 0 }}
@@ -69,15 +69,14 @@ export default function Intro() {
             </svg>
           </h1>
         </motion.div>
-        <TechStack />
       </div>
 
       <div className="h-[200vh] relative" ref={scrollRef}>
         <div className="w-full flex flex-col gap-1.5 items-center text-xl sticky top-[35vh]">
-          <div className=" ">
+          <div className="flex flex-col items-center gap-2">
             <div
               className={`${
-                quoteIndex > 0 ? "bg-[#4e89ff]" : "bg-[#0f0d0e]"
+                quoteIndex > 0 ? "bg-[#4e89ff]" : ""
               } flex  text-white p-12 font-semibold rounded-3xl `}
             >
               {quote.split("").map((char, i) => (
@@ -89,10 +88,11 @@ export default function Intro() {
                 </motion.span>
               ))}
             </div>
+            <p className="text-[#d6d6d6] font-medium text-sm">
+              매일 성장을 위해 노력합니다.
+            </p>
+            <TechStack />
           </div>
-          <p className="text-[#d6d6d6] font-medium text-sm">
-            매일 성장을 위해 노력합니다.
-          </p>
         </div>
       </div>
     </div>
