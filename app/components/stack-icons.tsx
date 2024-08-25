@@ -30,7 +30,7 @@ const TechStack = () => {
           </div>
           <div className="text-sm">
             {checkPoints[selected].map((point) => (
-              <p className="flex flex-row gap-1.5">
+              <p className="flex flex-row gap-1.5" key={point}>
                 <span>
                   <Check />
                 </span>
