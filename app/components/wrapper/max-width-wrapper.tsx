@@ -7,7 +7,7 @@ const MaxWidthWrapper = (
   }>
 ) => {
   return (
-    <div className={cn("lg:max-w-5xl w-full max-w-screen", props.className)}>
+    <div className={cn("lg:max-w-5xl w-full mx-auto", props.className)}>
       {props.children}
     </div>
   );
