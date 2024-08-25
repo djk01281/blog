@@ -39,7 +39,7 @@ export default function Home() {
               더 읽으러 가기
             </a>
           </div>
-          <div className="w-full lg: px-12">
+          <div className="w-full lg:px-12">
             <RecentBlogs />
           </div>
         </div>
