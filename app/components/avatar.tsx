@@ -2,7 +2,6 @@ import Image from "next/image";
 const Avatar = () => {
   return (
     <div className="relative group">
-      <Image src="/frame.jpg" width={200} height={200} alt="avatar" />
       <svg
         viewBox="0 0 400 400"
         fill="none"
