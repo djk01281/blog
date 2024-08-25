@@ -29,6 +29,21 @@ export default function Intro() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold  font-pretendard">
             <span className="text-[#f38ba3]">프론트엔드 개발자 </span>
             김동준입니다.
+            <svg
+              viewBox="0 0 550 20"
+              fill="none"
+              stroke="#b1eeb5"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              className="sc-6080564e-5 sc-6080564e-7 jgJXjb dPcZdg"
+            >
+              <path
+                d="M2.00024 1.5C14.5002 19.5 34.5 21 60.5 10C102.864 -7.92334 154.649 17.7997 200 17.5C267.5 17.0539 294.186 7.58925 337 5C379.814 2.41075 402.484 20.6688 445 15C482.5 10 495 10 510.5 13.5C526 17 545.5 15 548.5 2"
+                stroke="#11b5e5"
+                stroke-width="3"
+                stroke-linecap="round"
+              ></path>
+            </svg>
           </h1>
         </motion.div>
       </div>

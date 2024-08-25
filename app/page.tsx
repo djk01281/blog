@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { MaxWidthWrapper } from "./components/wrapper/max-width-wrapper";
-import { StackIcons } from "./components/stack-icons";
+import { StackIcons, TechStack } from "./components/stack-icons";
 import { Avatar } from "./components/avatar";
 import RecentBlogs from "./components/recent-blogs";
 import Intro from "./components/intro";
@@ -8,25 +8,9 @@ import Intro from "./components/intro";
 export default function Home() {
   return (
     <MaxWidthWrapper>
-      <main className="w-full h-full flex flex-col gap-10 md:gap-12 lg:gap-16 items-center  px-4  text-[#f6f1d7]">
-        {/* <div className="w-full max-w-lg px-6 py-4 rounded-full bg-[#f2f2f2] flex flex-row sm:flex-row justify-between items-center">
-          <div className="font-bold h-full align-middle flex items-center justify-center text-xl ">
-            @djk01281
-          </div>
-          <div className="gap-4 h-full align-middle flex flex-row sm:flex-row font-medium">
-            <div className="h-full flex-row align-middle  flex items-center justify-center sm:mb-0">
-              Blog
-            </div>k
-            <div className=" h-full flex-row align-middle  flex items-center justify-center sm:mb-0">
-              Portfolio
-            </div>
-          </div>
-        </div> */}
+      <main className="w-full h-full flex flex-col gap-10 md:gap-12 lg:gap-20 items-center  px-4  text-[#f6f1d7]">
         <Intro />
-        <StackIcons />
-        {
-          // Refactor the cards into a separate component
-        }
+        <TechStack />
         <div className="w-full flex flex-col gap-4 bg-[#f9f4da] text-[#221e1f]  p-8 font-extrabold rounded-3xl text-3xl">
           <div className="flex flex-col gap-2">
             <span className="flex flex-col gap-3 text-xl">

@@ -1,4 +1,50 @@
-const StackIcons = () => {
+"use client";
+import { useState } from "react";
+import Check from "./check";
+
+const checkPoints = {
+  react: [
+    "Suspense를 사용해 사용자 경험 개선",
+    "재사용 가능한 컴포넌트, 커스텀 훅 구현",
+    "React.memo를 사용한 성능 최적화",
+    "React Query를 사용한 데이터 관리",
+  ],
+};
+
+const TechStack = () => {
+  const [selected, setSelected] = useState<keyof typeof checkPoints>("react");
+
+  return (
+    <div className="flex flex-row w-full justify-center gap-24">
+      <StackIcons />
+      <div className="hidden  w-2/5  rounded-lg border-[1px] border-dashed text-white border-slate-200 p-4">
+        <div
+          className={`${
+            selected === "react" ? "bg-[#765ba0]" : ""
+          } rounded-md p-4 text-[#f8f3d9] flex flex-col gap-3 w-full`}
+        >
+          <div className="text-2xl font-bold font-bricolage ">
+            <span className="bg-[#f8f3d9] text-[#765ba0]">
+              {selected.toUpperCase()}
+            </span>
+          </div>
+          <div className="text-sm">
+            {checkPoints[selected].map((point) => (
+              <p className="flex flex-row gap-1.5">
+                <span>
+                  <Check />
+                </span>
+                {point}
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+function StackIcons() {
   return (
     <svg
       width="339"
@@ -299,6 +345,6 @@ const StackIcons = () => {
       </defs>
     </svg>
   );
-};
+}
 
-export { StackIcons };
+export { StackIcons, TechStack };

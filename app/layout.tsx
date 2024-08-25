@@ -32,7 +32,7 @@ export default function RootLayout({
       <body
         className={`h-full ${pretendard.className} ${bricolage.variable} bg-[#0f0d0e]`}
       >
-        <MaxWidthWrapper className="flex flex-col gap-12 pb-6">
+        <MaxWidthWrapper className="flex flex-col gap-6 pb-6">
           <SiteHeader />
           <main className="flex flex-col items-center">{children}</main>
           {/* <SiteFooter /> */}
