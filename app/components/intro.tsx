@@ -30,7 +30,7 @@ export default function Intro() {
   }, [quoteProgress]);
 
   return (
-    <div className="flex flex-col gap-2 mt-20 md:mt-12 lg:mt-4">
+    <div className="flex flex-col mt-8 gap-12 lg:mt-4">
       <div className="flex flex-col  lg:gap-4">
         <motion.div
           initial={{ opacity: 0, y: 48 }}
@@ -72,21 +72,22 @@ export default function Intro() {
       </div>
 
       <div className="h-[200vh] relative" ref={scrollRef}>
-        <div className="w-full flex flex-col gap-1.5 items-center text-xl sticky top-[35vh]">
+        <div className="w-full flex flex-col gap-1.5 items-center text-xl sticky top-[30vh]">
           <div className="flex flex-col items-center gap-2">
             <div
               className={`${
-                quoteIndex > 0 ? "bg-[#4e89ff]" : ""
-              } flex  text-white p-12 font-semibold rounded-3xl `}
+                quoteIndex > 0 ? "bg-[#4e89ff] flex flex-row" : "hidden"
+              }   text-white p-12 font-semibold rounded-3xl `}
             >
-              {quote.split("").map((char, i) => (
-                <motion.span
-                  key={i}
-                  className={`${quoteIndex > i ? "flex" : "hidden"}`}
-                >
-                  {char}
-                </motion.span>
-              ))}
+              {quoteIndex > 0 &&
+                quote.split("").map((char, i) => (
+                  <motion.span
+                    key={i}
+                    className={`${quoteIndex > i ? "flex" : "hidden"}`}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
             </div>
             <p className="text-[#d6d6d6] font-medium text-sm">
               매일 성장을 위해 노력합니다.
