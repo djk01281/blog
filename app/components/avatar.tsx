@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Avatar = () => {
-  const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState(true);
   return (
     <div className="relative group cursor-pointer" onClick={() => {}}>
       <svg

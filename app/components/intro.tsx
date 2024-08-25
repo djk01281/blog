@@ -47,13 +47,17 @@ export default function Intro() {
           </h1>
         </motion.div>
       </div>
-      <div className="w-full flex flex-col gap-1.5 items-center text-xl">
-        <div className="bg-[#4e89ff] flex flex-col text-white p-12 font-semibold rounded-3xl">
-          {quote}
+      <div className="h-[100vh]">
+        <div className="w-full flex flex-col gap-1.5 items-center text-xl sticky top-[30vh]">
+          <div className=" ">
+            <div className="bg-[#4e89ff] flex flex-col text-white p-12 font-semibold rounded-3xl ">
+              {quote}
+            </div>
+          </div>
+          <p className="text-[#d6d6d6] font-medium text-sm">
+            매일 성장을 위해 노력합니다.
+          </p>
         </div>
-        <p className="text-[#d6d6d6] font-medium text-sm">
-          매일 성장을 위해 노력합니다.
-        </p>
       </div>
     </>
   );
