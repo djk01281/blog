@@ -2,13 +2,36 @@
 
 import { Avatar } from "../components/avatar";
 import { motion } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
+import { use, useEffect, useRef, useState } from "react";
+import { TechStack } from "./stack-icons";
 
-const quote = '" 가치를 만들어내는 개발자 "';
+const quote = '"가치를만들어내는개발자"';
 
 export default function Intro() {
+  const [quoteIndex, setQuoteIndex] = useState(0);
+  const scrollRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ["start", "end"],
+  });
+
+  const quoteProgress = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, quote.length]
+  );
+
+  useEffect(() => {
+    quoteProgress.on("change", (v) => {
+      setQuoteIndex(Math.floor(v));
+      console.log(quoteProgress.get());
+    });
+  }, [quoteProgress]);
+
   return (
-    <>
-      <div>
+    <div className="flex flex-col gap-80 mt-20 md:mt-12 lg:mt-4">
+      <div className="flex flex-col gap-10 lg:gap-8">
         <motion.div
           initial={{ opacity: 0, y: 48 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,12 +69,25 @@ export default function Intro() {
             </svg>
           </h1>
         </motion.div>
+        <TechStack />
       </div>
-      <div className="h-[100vh]">
-        <div className="w-full flex flex-col gap-1.5 items-center text-xl sticky top-[30vh]">
+
+      <div className="h-[200vh] relative" ref={scrollRef}>
+        <div className="w-full flex flex-col gap-1.5 items-center text-xl sticky top-[35vh]">
           <div className=" ">
-            <div className="bg-[#4e89ff] flex flex-col text-white p-12 font-semibold rounded-3xl ">
-              {quote}
+            <div
+              className={`${
+                quoteIndex > 0 ? "bg-[#4e89ff]" : "bg-[#0f0d0e]"
+              } flex  text-white p-12 font-semibold rounded-3xl `}
+            >
+              {quote.split("").map((char, i) => (
+                <motion.span
+                  key={i}
+                  className={`${quoteIndex > i ? "flex" : "hidden"}`}
+                >
+                  {char}
+                </motion.span>
+              ))}
             </div>
           </div>
           <p className="text-[#d6d6d6] font-medium text-sm">
@@ -59,6 +95,6 @@ export default function Intro() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -10,7 +10,6 @@ export default function Home() {
     <MaxWidthWrapper>
       <main className="w-full h-full flex flex-col gap-10 md:gap-12 lg:gap-20 items-center  px-4  text-[#f6f1d7]">
         <Intro />
-        <TechStack />
         <div className="w-full flex flex-col gap-4 bg-[#f9f4da] text-[#221e1f]  p-8 font-extrabold rounded-3xl text-3xl mb-4">
           <div className="flex flex-col gap-2">
             <span className="flex flex-col gap-3 text-xl">
