@@ -5,13 +5,7 @@ import { useState } from "react";
 const Avatar = () => {
   const [isOn, setIsOn] = useState(false);
   return (
-    <div
-      className="relative group cursor-pointer"
-      onClick={() => {
-        console.log("setting isOn to", !isOn);
-        setIsOn(!isOn);
-      }}
-    >
+    <div className="relative group cursor-pointer" onClick={() => {}}>
       <svg
         viewBox="0 0 400 400"
         fill="none"
