@@ -3,6 +3,7 @@ import { Inter, Paytone_One, Bricolage_Grotesque } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SiteHeader } from "./components/nav/site-header";
+import SiteFooter from "./components/footer";
 import { MaxWidthWrapper } from "./components/wrapper/max-width-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -29,12 +30,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`h-full  ${pretendard.className} ${bricolage.variable} bg-[#0f0d0e]`}
+        className={`h-full ${pretendard.className} ${bricolage.variable} bg-[#0f0d0e]`}
       >
-        <MaxWidthWrapper>
+        <MaxWidthWrapper className="flex flex-col gap-12 pb-6">
           <SiteHeader />
           <main className="flex flex-col items-center">{children}</main>
           {/* <SiteFooter /> */}
+          <SiteFooter />
         </MaxWidthWrapper>
       </body>
     </html>
