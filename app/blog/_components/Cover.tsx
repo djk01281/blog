@@ -32,15 +32,16 @@
 
 import Image from "next/image";
 import { ImageProps } from "next/image";
-
+import { cn } from "@/app/lib/utils";
 interface ImageCardProps extends ImageProps {
   type: "default" | "mac";
+  className?: string;
 }
 
-const Cover = ({ type = "default", ...props }: ImageCardProps) => {
+const Cover = ({ type = "default", className, ...props }: ImageCardProps) => {
   return (
     <div
-      className="w-full overflow-hidden relative rounded-xl"
+      className={cn("w-full overflow-hidden relative rounded-xl", className)}
       style={{ aspectRatio: "16 / 9" }} // Using aspect-ratio CSS property
     >
       <Image
