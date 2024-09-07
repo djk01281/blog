@@ -23,8 +23,10 @@ const BlogCard = ({
 }: BlogCardProps) => {
   return (
     <a
-      className={`${className}
-        w-full p-8 pb-6 bg-[#231F20] text-[#F4F0D6] rounded-lg font-bold hover:bg-[#1e1e25] hover:text-white flex flex-col justify-between gap-8 font-pretendard`}
+      className={cn(
+        `w-full p-8 pb-6 bg-[#231F20] text-[#F4F0D6] rounded-xl font-bold hover:bg-[#1e1e25] hover:text-white flex flex-col justify-between gap-8 font-pretendard`,
+        className
+      )}
       href={`/blog/${slug}`}
     >
       <Cover src={cover ? cover : ""} alt={title} type="default" />
