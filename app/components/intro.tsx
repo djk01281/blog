@@ -3,8 +3,8 @@
 import { Avatar } from "../components/avatar";
 import { motion } from "framer-motion";
 import { useScroll, useTransform } from "framer-motion";
-import { use, useEffect, useRef, useState } from "react";
-import { TechStack } from "./stack-icons";
+import { useEffect, useRef, useState } from "react";
+import TechStack from "./stack-icons";
 
 const quote = '"가치를만들어내는개발자"';
 
@@ -79,15 +79,14 @@ export default function Intro() {
                 quoteIndex > 0 ? "bg-[#4e89ff] flex flex-row" : "hidden"
               }   text-white p-12 font-semibold rounded-3xl `}
             >
-              {quoteIndex > 0 &&
-                quote.split("").map((char, i) => (
-                  <motion.span
-                    key={i}
-                    className={`${quoteIndex > i ? "flex" : "hidden"}`}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
+              {quote.split("").map((char, i) => (
+                <motion.span
+                  key={i}
+                  className={`${quoteIndex > i ? "flex" : "hidden"}`}
+                >
+                  {char}
+                </motion.span>
+              ))}
             </div>
             <p className="text-[#d6d6d6] font-medium text-sm">
               매일 성장을 위해 노력합니다.
