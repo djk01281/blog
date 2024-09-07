@@ -25,7 +25,6 @@ export default function Intro() {
   useEffect(() => {
     quoteProgress.on("change", (v) => {
       setQuoteIndex(Math.floor(v));
-      console.log(quoteProgress.get());
     });
   }, [quoteProgress]);
 
@@ -47,7 +46,7 @@ export default function Intro() {
           className="w-full flex gap-2 items-center flex-col text-center"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold  font-pretendard">
-            {"안녕하세요 ✋🏻"}
+            {"안녕하세요 👋🏻"}
           </h1>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold  font-pretendard">
             <span className="text-[#f38ba3]">프론트엔드 개발자 </span>

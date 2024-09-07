@@ -5,7 +5,7 @@ import { BlogCard } from "./_components/BlogCard";
 export default async function Page() {
   const blogs = await getAllBlogs();
   return (
-    <div className="w-full flex flex-col gap-6 px-8">
+    <div className="w-full flex flex-col gap-6 px-8 pb-8">
       <div className="font-bricolage font-extrabold text-[#f9f4da] text-4xl flex justify-center mt-8">
         Articles
       </div>

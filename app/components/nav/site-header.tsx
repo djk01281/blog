@@ -19,7 +19,7 @@ const SiteHeader = () => {
 
   return (
     <div
-      className={` ${showNav ? "" : "hidden"} w-full flex flex-col   ${
+      className={` ${showNav ? "" : "hidden"} w-full flex flex-col z-40  ${
         open ? "h-svh" : ""
       }`}
     >
