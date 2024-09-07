@@ -16,7 +16,7 @@ export default async function Page() {
       </div>
       <div className="width-full flex flex-row justify-center">
         <div className="prose prose-pink bg-[#231f20] p-8 w-full rounded-lg">
-          <CV components={overrideComponents} />
+          <CV components={{ ...overrideComponents }} />
         </div>
       </div>
     </div>
