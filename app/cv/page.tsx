@@ -1,7 +1,7 @@
 import CV from "./mdx/cv.mdx";
 
 export default async function Page() {
-  const customH3 = ({ children }: { children: string }) => {
+  const customH3 = ({ children }: { children?: React.ReactNode }) => {
     return <h3 className="text-[#f38ba3]">{children}</h3>;
   };
 
@@ -16,7 +16,7 @@ export default async function Page() {
       </div>
       <div className="width-full flex flex-row justify-center">
         <div className="prose prose-pink bg-[#231f20] p-8 w-full rounded-lg">
-          <CV components={{ ...overrideComponents }} />
+          <CV components={overrideComponents} />
         </div>
       </div>
     </div>
