@@ -47,4 +47,11 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  head: {
+    title: "djk01281's Blog",
+    description: "djk01281's Blog",
+    lang: "ko",
+    type: "website",
+    url: "https://djk01281.vercel.app",
+  },
 };
