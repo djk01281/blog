@@ -37,7 +37,7 @@ export default function Intro() {
           transition={{ duration: 1 }}
           className="flex justify-center p-6 sm:p-12"
         >
-          <Avatar />
+          {/* <Avatar /> */}
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 48 }}
