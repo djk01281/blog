@@ -1,7 +1,4 @@
-import Image from "next/image";
 import { MaxWidthWrapper } from "./components/wrapper/max-width-wrapper";
-import { StackIcons, TechStack } from "./components/stack-icons";
-import { Avatar } from "./components/avatar";
 import RecentBlogs from "./components/recent-blogs";
 import Intro from "./components/intro";
 
