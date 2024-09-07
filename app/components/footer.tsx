@@ -20,7 +20,14 @@ export default function SiteFooter() {
           </div>
         </div>
         <span className="w-full text-sm flex items-center justify-center text-[#f6f1d7] gap-1.5 font-normal">
-          Made with 🎧 by <span className="text-[#11b5e5]"> @djk01281</span>
+          Made with 🎧 by{" "}
+          <a
+            target="_blank"
+            href="https://github.com/djk01281"
+            className="text-[#11b5e5]"
+          >
+            @djk01281
+          </a>
         </span>
       </div>
     </div>
