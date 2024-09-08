@@ -6,7 +6,7 @@ import { useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import TechStack from "./stack-icons";
 
-const quote = '"가치를만들어내는개발자"';
+const quote = '"가치를 만들어내는 개발자"';
 
 export default function Intro() {
   const [quoteIndex, setQuoteIndex] = useState(0);
@@ -29,7 +29,7 @@ export default function Intro() {
   }, [quoteProgress]);
 
   return (
-    <div className="flex flex-col mt-8 gap-12 lg:mt-4">
+    <div className="flex flex-col mt-8 gap-12 lg:mt-4" ref={scrollRef}>
       <div className="flex flex-col  lg:gap-4">
         <motion.div
           initial={{ opacity: 0, y: 48 }}
@@ -40,14 +40,43 @@ export default function Intro() {
           {/* <Avatar /> */}
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: 48 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75 }}
+          // initial={{ opacity: 0, y: 48 }}
+          // animate={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 0.75 }}
           className="w-full flex gap-2 items-center flex-col text-center"
         >
-          <h1 className=" text-4xl sm:text-5xl lg:text-6xl font-extrabold  font-pretendard">
-            {"안녕하세요 👋🏻"}
-          </h1>
+          <motion.div
+            initial="initial"
+            whileHover="hovered"
+            className="relative block overflow-hidden"
+          >
+            <motion.h1
+              variants={{
+                initial: {
+                  y: 0,
+                },
+                hovered: {
+                  y: "-100%",
+                },
+              }}
+              className=" text-4xl sm:text-5xl lg:text-6xl font-extrabold  font-pretendard"
+            >
+              {"안녕하세요 👋🏻"}
+            </motion.h1>
+            <motion.h1
+              variants={{
+                initial: {
+                  y: "100%",
+                },
+                hovered: {
+                  y: 0,
+                },
+              }}
+              className="absolute inset-0 text-4xl sm:text-5xl lg:text-6xl font-extrabold  font-pretendard"
+            >
+              {"안녕하세요 👋🏻"}
+            </motion.h1>
+          </motion.div>
           <h1 className="text-3xl sm:text-4xl  lg:text-5xl font-extrabold  font-pretendard ">
             {/* <span className="text-[#f38ba3] hidden sm:flex">
               프론트엔드 개발자{" "}
@@ -73,23 +102,29 @@ export default function Intro() {
         </motion.div>
       </div>
 
-      <div className="h-[200vh] relative" ref={scrollRef}>
+      <div className="h-[300vh] relative">
         <div className="w-full flex flex-col gap-1.5 items-center text-xl sticky top-[30vh]">
           <div className="flex flex-col items-center gap-2">
-            <div
-              className={`${
-                quoteIndex > 0 ? "bg-[#4e89ff] flex flex-row" : "hidden"
-              }   text-white p-12 font-semibold rounded-3xl `}
-            >
-              {quote.split("").map((char, i) => (
-                <motion.span
-                  key={i}
-                  className={`${quoteIndex > i ? "flex" : "hidden"}`}
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </div>
+            {quoteIndex > 0 && (
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                transition={{ type: "spring", duration: 0.5 }}
+                className={`${"bg-[#4e89ff] flex flex-row"}   text-white p-12 font-semibold rounded-3xl `}
+              >
+                {quote.split("").map((char, i) => (
+                  <motion.span
+                    key={i}
+                    className={`${quoteIndex > i ? "flex" : "hidden"} ${
+                      char === " " ? "w-4" : ""
+                    }`}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.div>
+            )}
             <p className="text-[#d6d6d6] font-medium text-sm">
               매일 성장을 위해 노력합니다.
             </p>
