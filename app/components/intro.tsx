@@ -22,7 +22,7 @@ export default function Intro({ children }: PropsWithChildren<{}>) {
 
   useEffect(() => {
     quoteProgress.on("change", (v) => {
-      setQuoteIndex(Math.floor(v));
+      setQuoteIndex(Math.floor(v * 1.5));
     });
   }, [quoteProgress]);
 
@@ -99,7 +99,7 @@ export default function Intro({ children }: PropsWithChildren<{}>) {
           </h1>
         </motion.div>
       </div>
-      <div className="h-[300vh] relative">
+      <div className="h-[400vh] relative">
         <div className="w-full flex flex-col gap-1.5 items-center text-xl sticky top-[30vh]">
           <div className="flex flex-col items-center gap-2">
             <AnimatePresence>
