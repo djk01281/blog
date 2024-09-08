@@ -2,7 +2,7 @@
 
 import { Avatar } from "../components/avatar";
 import { motion } from "framer-motion";
-import { useScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import TechStack from "./stack-icons";
 
@@ -105,26 +105,28 @@ export default function Intro() {
       <div className="h-[300vh] relative">
         <div className="w-full flex flex-col gap-1.5 items-center text-xl sticky top-[30vh]">
           <div className="flex flex-col items-center gap-2">
-            {quoteIndex > 0 && (
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0 }}
-                transition={{ type: "spring", duration: 0.5 }}
-                className={`${"bg-[#4e89ff] flex flex-row"}   text-white p-12 font-semibold rounded-3xl `}
-              >
-                {quote.split("").map((char, i) => (
-                  <motion.span
-                    key={i}
-                    className={`${quoteIndex > i ? "flex" : "hidden"} ${
-                      char === " " ? "w-4" : ""
-                    }`}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-              </motion.div>
-            )}
+            <AnimatePresence>
+              {quoteIndex > 0 && (
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0.75, opacity: 0 }}
+                  transition={{ type: "spring", duration: 0.5 }}
+                  className={`${"bg-[#4e89ff] flex flex-row"}   text-white p-12 font-semibold rounded-3xl `}
+                >
+                  {quote.split("").map((char, i) => (
+                    <motion.span
+                      key={i}
+                      className={`${quoteIndex > i ? "flex" : "hidden"} ${
+                        char === " " ? "w-4" : ""
+                      }`}
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
             <p className="text-[#d6d6d6] font-medium text-sm">
               매일 성장을 위해 노력합니다.
             </p>
