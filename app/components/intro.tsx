@@ -1,14 +1,12 @@
 "use client";
 
-import { Avatar } from "../components/avatar";
 import { motion } from "framer-motion";
 import { useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import TechStack from "./stack-icons";
+import { PropsWithChildren, useEffect, useRef, useState } from "react";
 
 const quote = '"가치를 만들어내는 개발자"';
 
-export default function Intro() {
+export default function Intro({ children }: PropsWithChildren<{}>) {
   const [quoteIndex, setQuoteIndex] = useState(0);
   const scrollRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -94,8 +92,8 @@ export default function Intro() {
               <path
                 d="M2.00024 1.5C14.5002 19.5 34.5 21 60.5 10C102.864 -7.92334 154.649 17.7997 200 17.5C267.5 17.0539 294.186 7.58925 337 5C379.814 2.41075 402.484 20.6688 445 15C482.5 10 495 10 510.5 13.5C526 17 545.5 15 548.5 2"
                 stroke="#11b5e5"
-                stroke-width="3"
-                stroke-linecap="round"
+                strokeWidth="3"
+                strokeLinecap="round"
               ></path>
             </svg>
           </h1>
@@ -139,7 +137,7 @@ export default function Intro() {
             <p className="text-[#d6d6d6] font-medium text-sm">
               매일 성장을 위해 노력합니다.
             </p>
-            <TechStack />
+            {children}
           </div>
         </div>
       </div>

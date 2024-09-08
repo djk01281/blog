@@ -1,12 +1,15 @@
 import { MaxWidthWrapper } from "./components/wrapper/max-width-wrapper";
 import RecentBlogs from "./components/recent-blogs";
 import Intro from "./components/intro";
+import TechStack from "./components/stack-icons";
 
 export default function Home() {
   return (
     <MaxWidthWrapper>
       <main className="w-full h-full flex flex-col gap-20 md:gap-28 lg:gap-32 items-center  px-4  text-[#f6f1d7]">
-        <Intro />
+        <Intro>
+          <TechStack />
+        </Intro>
         <div className="w-full flex flex-col gap-4 bg-[#f9f4da] text-[#221e1f]  p-8 font-extrabold rounded-3xl text-3xl mb-4">
           <div className="flex flex-col gap-2">
             <span className="flex flex-col gap-3 text-xl">
