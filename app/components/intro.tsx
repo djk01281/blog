@@ -45,11 +45,14 @@ export default function Intro() {
           transition={{ duration: 0.75 }}
           className="w-full flex gap-2 items-center flex-col text-center"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold  font-pretendard">
+          <h1 className="text-slate-50 text-4xl sm:text-5xl lg:text-6xl font-extrabold  font-pretendard">
             {"안녕하세요 👋🏻"}
           </h1>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold  font-pretendard">
-            <span className="text-[#f38ba3]">프론트엔드 개발자 </span>
+          <h1 className="text-3xl sm:text-4xl  lg:text-5xl font-extrabold  font-pretendard ">
+            {/* <span className="text-[#f38ba3] hidden sm:flex">
+              프론트엔드 개발자{" "}
+            </span> */}
+            <span className="text-[#f38ba3]">FE 개발자 </span>
             김동준입니다.
             <svg
               viewBox="0 0 550 20"
