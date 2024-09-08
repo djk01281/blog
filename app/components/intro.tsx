@@ -101,7 +101,7 @@ export default function Intro({ children }: PropsWithChildren<{}>) {
       </div>
       <div className="h-[400vh] relative">
         <div className="w-full flex flex-col gap-1.5 items-center text-xl sticky top-[30vh]">
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center">
             <AnimatePresence>
               {quoteIndex > 0 && (
                 <motion.div
@@ -134,7 +134,7 @@ export default function Intro({ children }: PropsWithChildren<{}>) {
               )}
             </AnimatePresence>
 
-            <p className="text-[#d6d6d6] font-medium text-sm">
+            <p className="text-[#d6d6d6] font-medium text-sm mt-4">
               매일 성장을 위해 노력합니다.
             </p>
             {children}
