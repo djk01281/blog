@@ -45,7 +45,7 @@ export default function Intro() {
           transition={{ duration: 0.75 }}
           className="w-full flex gap-2 items-center flex-col text-center"
         >
-          <h1 className="text-slate-50 text-4xl sm:text-5xl lg:text-6xl font-extrabold  font-pretendard">
+          <h1 className=" text-4xl sm:text-5xl lg:text-6xl font-extrabold  font-pretendard">
             {"안녕하세요 👋🏻"}
           </h1>
           <h1 className="text-3xl sm:text-4xl  lg:text-5xl font-extrabold  font-pretendard ">
