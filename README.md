@@ -1,4 +1,4 @@
-Deployed at https://djk01281.vercel.app/
+**[WIP]** Deployed at https://djk01281.vercel.app/
 
 > [!NOTE]
 > Just a personal website. 🥳 <br/>
